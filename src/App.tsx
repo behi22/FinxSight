@@ -1,24 +1,45 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Layout } from 'antd';
+import AppHeader from './components/Header';
+import Home from './pages/Home';
+import Settings from './pages/Settings';
+import User from './pages/User';
+import Inventory from './pages/Inventory';
+import Sales from './pages/Sales';
 
-function App() {
+// remove me later
+import { HomeOutlined } from '@ant-design/icons';
+
+const { Content } = Layout;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <AppHeader
+          pageTitle="Dashboard"
+          pageIcon={<HomeOutlined />} // Default icon, adjust based on page
+        />
+        <Layout>
+          <Content
+            style={{
+              padding: '24px',
+              minHeight: 'calc(100vh - 64px)',
+            }}
+          >
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/inventory" element={<Inventory />} />
+              <Route path="/sales" element={<Sales />} />
+            </Routes>
+          </Content>
+        </Layout>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;
