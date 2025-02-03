@@ -9,8 +9,11 @@ import User from './pages/User';
 import Inventory from './pages/Inventory';
 import Sales from './pages/Sales';
 
-import './styles/Header.css';
 import './styles/Global.css';
+import './styles/Header.css';
+import './styles/Navbar.css';
+import './styles/Profile.css';
+import './styles/Footer.css';
 
 const { Content } = Layout;
 
@@ -31,11 +34,17 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Layout>
+      <Layout style={{ backgroundColor: 'transparent' }}>
         <AppHeader />
 
-        <Layout>
-          <Content style={{ padding: '24px', minHeight: 'calc(100vh - 64px)' }}>
+        <Layout style={{ backgroundColor: 'transparent' }}>
+          <Content
+            style={{
+              padding: '24px',
+              minHeight: 'calc(100vh - 64px)',
+              backgroundColor: 'transparent',
+            }}
+          >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />

@@ -14,6 +14,8 @@ import {
 import Navbar from './Navbar';
 import Profile from './Profile';
 
+import dealershipLogo from '../assets/icons/dealership2.png';
+
 const { Header, Sider } = Layout;
 
 const AppHeader: React.FC = () => {
@@ -79,8 +81,8 @@ const AppHeader: React.FC = () => {
         <Navbar collapsed={!sidebarVisible} onMenuClick={handleMenuClick} />
       </Sider>
 
-      <Layout style={{ marginLeft: sidebarVisible ? 240 : 0 }}>
-        <Header className="header">
+      <Layout style={{ marginLeft: sidebarVisible ? '240px' : 0 }}>
+        <Header className="header-top">
           <div className="header-left">
             <Button
               className="collapsed-btn"
@@ -88,18 +90,19 @@ const AppHeader: React.FC = () => {
               style={{ display: 'flex', alignItems: 'center' }}
             >
               <span style={{ marginLeft: sidebarVisible ? 8 : 0 }}>
-                {!sidebarVisible && 'Menu'}{' '}
+                {sidebarVisible ? 'Close Menu' : 'Menu'}
               </span>
               {sidebarVisible ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
             </Button>
-            <div className="company-logo">FinxSIGHT</div>
 
-            <div
-              className="page-title"
-              style={{ display: 'flex', alignItems: 'center' }}
-            >
+            <div className="page-title">
               {currentRoute.icon && (
-                <span style={{ marginRight: 8, fontSize: 18 }}>
+                <span
+                  style={{
+                    marginRight: '1%',
+                    fontSize: '2vh',
+                  }}
+                >
                   {currentRoute.icon}
                 </span>
               )}
@@ -115,6 +118,14 @@ const AppHeader: React.FC = () => {
               onCloseSidebar={toggleSidebar}
             />
           </div>
+        </Header>
+        <Header className="header-bottom">
+          <img
+            src={dealershipLogo}
+            alt="Company Logo"
+            style={{ height: '30%', marginRight: '2%' }}
+          />
+          <div className="company-logo">FinxSIGHT</div>
         </Header>
       </Layout>
 

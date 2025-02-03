@@ -69,11 +69,22 @@ const Navbar: React.FC<NavbarProps> = ({ collapsed, onMenuClick }) => {
   ];
 
   return (
-    <div style={{ width: collapsed ? 80 : 240, height: '100%' }}>
+    <div
+      style={{ width: collapsed ? 80 : 240, height: '100%' }}
+      className="nav"
+    >
       <h3 style={{ display: collapsed ? 'none' : 'block' }}>Menu</h3>
-      <Divider style={{ display: collapsed ? 'none' : 'block' }} />
+      <Divider
+        style={{ display: collapsed ? 'none' : 'block' }}
+        className="divider"
+      />
 
-      <Menu mode="inline" defaultSelectedKeys={[]} inlineCollapsed={collapsed}>
+      <Menu
+        mode="inline"
+        defaultSelectedKeys={[]}
+        inlineCollapsed={collapsed}
+        className="navMenu"
+      >
         {menuItems.map((item) => (
           <Menu.Item
             key={item.key}
@@ -84,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ collapsed, onMenuClick }) => {
             {item.label}
           </Menu.Item>
         ))}
-        <Divider />
+        <Divider className="divider" />
         {otherItems.map((item) => (
           <Menu.Item
             key={item.key}

@@ -43,32 +43,46 @@ const Profile: React.FC<ProfileProps> = ({
       className="profile-modal"
     >
       <div>
-        <Divider />
+        <Divider className="divider" />
       </div>
 
       <Menu>
         <Menu.Item
           key="profile"
-          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          style={{ background: 'transparent', padding: 0, color: '#001529' }}
           onClick={() => handleMenuClick('profile')}
         >
-          <Avatar icon={<UserOutlined />} style={{ marginRight: 10 }} />
+          <Avatar icon={<UserOutlined />} style={{ marginRight: 15 }} />
           Your Profile
         </Menu.Item>
         <Menu.Item
           key="settings"
-          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          style={{ background: 'transparent', padding: 0, color: '#001529' }}
           onClick={() => handleMenuClick('settings')}
         >
-          <SettingOutlined style={{ marginRight: 10 }} />
+          <SettingOutlined
+            style={{
+              fontSize: 25,
+              marginRight: 15,
+              marginLeft: 2,
+              marginTop: 10,
+            }}
+          />
           Settings
         </Menu.Item>
         <Menu.Item
           key="logout"
-          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          style={{ background: 'transparent', padding: 0, color: '#001529' }}
           onClick={() => handleMenuClick('logout')}
         >
-          <LogoutOutlined style={{ marginRight: 10 }} />
+          <LogoutOutlined
+            style={{
+              fontSize: 25,
+              marginRight: 15,
+              marginLeft: 2,
+              marginTop: 10,
+            }}
+          />
           Log Out
         </Menu.Item>
       </Menu>
