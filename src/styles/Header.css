@@ -1,0 +1,131 @@
+/* Sidebar overlay for blocking content, without background color */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 240px; /* Sidebar width to the right */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent */
+  z-index: 9999; /* Ensure it appears on top of other content */
+  display: none; /* Hidden by default */
+  pointer-events: all; /* Allow the overlay to block interactions */
+}
+
+/* Show the overlay when the sidebar is visible */
+.app-sider.visible + .sidebar-overlay {
+  display: block;
+}
+
+/* Sidebar styling */
+.app-sider {
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Sidebar behavior when collapsed */
+.app-sider.collapsed {
+  width: 0; /* Collapsed state hides sidebar */
+  background-color: transparent; /* Remove background */
+}
+
+.app-sider.visible {
+  width: 240px; /* Full width of the sidebar */
+  background-color: #001529; /* Background color when expanded */
+}
+
+/* Styling for the collapsed menu button */
+.collapsed-btn {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%; /* Ensure the button takes full width */
+}
+
+.collapsed-btn span {
+  display: inline-block;
+}
+
+/* Remove highlight effect for menu items */
+.ant-menu-item-selected,
+.ant-menu-item-active {
+  background-color: transparent !important;
+}
+
+/* When the sidebar is collapsed, make sure the menu text is always visible */
+.app-sider .ant-menu {
+  padding: 0;
+  margin: 0;
+}
+
+/* Transition the left margin of the layout when the sidebar is open */
+.app-layout {
+  transition: margin-left 0.3s ease;
+}
+
+/* Styling for the header */
+.header {
+  background-color: #001529;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  margin-left: 10px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.page-title {
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.page-title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.page-title .anticon {
+  font-size: 20px; /* Adjust icon size to match the title */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+/* Header right section (profile button) */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensures the sidebar behaves like a modal */
+.app-sider {
+  transition: transform 0.3s ease-out;
+}
+
+.app-sider.collapsed {
+  transform: translateX(-100%); /* Slide out the sidebar */
+}
+
+/* When sidebar is open, make sure it slides in smoothly */
+.app-sider.visible {
+  transform: translateX(0); /* Bring the sidebar in */
+}

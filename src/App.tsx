@@ -2,33 +2,42 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import AppHeader from './components/Header';
+import AppFooter from './components/Footer';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
 import User from './pages/User';
 import Inventory from './pages/Inventory';
 import Sales from './pages/Sales';
 
-// remove me later
-import { HomeOutlined } from '@ant-design/icons';
+import './styles/Header.css';
+import './styles/Global.css';
 
 const { Content } = Layout;
 
 const App: React.FC = () => {
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
+  React.useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
   return (
     <Router>
       <Layout>
-        <AppHeader
-          pageTitle="Dashboard"
-          pageIcon={<HomeOutlined />} // Default icon, adjust based on page
-        />
+        <AppHeader />
+
         <Layout>
-          <Content
-            style={{
-              padding: '24px',
-              minHeight: 'calc(100vh - 64px)',
-            }}
-          >
+          <Content style={{ padding: '24px', minHeight: 'calc(100vh - 64px)' }}>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/user" element={<User />} />
               <Route path="/settings" element={<Settings />} />
@@ -37,6 +46,8 @@ const App: React.FC = () => {
             </Routes>
           </Content>
         </Layout>
+
+        <AppFooter toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       </Layout>
     </Router>
   );

@@ -1,0 +1,42 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Styles */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Header styles (dark mode) */
+body.dark-mode .header {
+  background-color: #1f1f1f;
+}
+
+/* Sidebar styles for dark mode */
+body.dark-mode .app-sider {
+  background-color: #333;
+}
+
+/* Footer styles for dark mode */
+body.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .ant-menu-item {
+  color: #fff !important;
+}
+
+/* Optionally, adjust button/icon colors for dark mode */
+body.dark-mode .ant-btn {
+  background-color: #1890ff;
+  color: #fff;
+}

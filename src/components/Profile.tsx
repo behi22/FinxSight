@@ -10,9 +10,14 @@ import { useNavigate } from 'react-router-dom';
 interface ProfileProps {
   open: boolean;
   onCancel: () => void;
+  onCloseSidebar: () => void;
 }
 
-const Profile: React.FC<ProfileProps> = ({ open, onCancel }) => {
+const Profile: React.FC<ProfileProps> = ({
+  open,
+  onCancel,
+  onCloseSidebar,
+}) => {
   const navigate = useNavigate();
 
   const handleMenuClick = (key: string) => {
@@ -24,25 +29,45 @@ const Profile: React.FC<ProfileProps> = ({ open, onCancel }) => {
       console.log('Logged out!'); // Placeholder for logout functionality
       // Add real logout functionality here when needed
     }
+    // Close modal and sidebar after menu item click
+    onCancel();
+    onCloseSidebar();
   };
 
   return (
-    <Modal open={open} onCancel={onCancel} footer={null} title="Profile">
+    <Modal
+      open={open}
+      onCancel={onCancel}
+      footer={null}
+      title="Profile"
+      className="profile-modal"
+    >
       <div>
-        <h3>Profile</h3>
         <Divider />
       </div>
 
       <Menu>
-        <Menu.Item key="profile" onClick={() => handleMenuClick('profile')}>
+        <Menu.Item
+          key="profile"
+          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          onClick={() => handleMenuClick('profile')}
+        >
           <Avatar icon={<UserOutlined />} style={{ marginRight: 10 }} />
           Your Profile
         </Menu.Item>
-        <Menu.Item key="settings" onClick={() => handleMenuClick('settings')}>
+        <Menu.Item
+          key="settings"
+          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          onClick={() => handleMenuClick('settings')}
+        >
           <SettingOutlined style={{ marginRight: 10 }} />
           Settings
         </Menu.Item>
-        <Menu.Item key="logout" onClick={() => handleMenuClick('logout')}>
+        <Menu.Item
+          key="logout"
+          style={{ background: 'transparent', padding: 0, color: 'black' }}
+          onClick={() => handleMenuClick('logout')}
+        >
           <LogoutOutlined style={{ marginRight: 10 }} />
           Log Out
         </Menu.Item>
