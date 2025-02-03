@@ -17,6 +17,7 @@ import './styles/components/Profile.css';
 import './styles/components/Footer.css';
 
 import './styles/pages/Home.css';
+import './styles/pages/User.css';
 
 const { Content } = Layout;
 

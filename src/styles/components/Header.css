@@ -102,7 +102,6 @@
 
 .collapsed-btn {
   margin-right: 30px; /* Increased space between button and company logo */
-  margin-bottom: 17px;
 }
 
 .company-logo {
@@ -136,7 +135,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  width: 55px;
 }
 
 .header-right .ant-btn {
@@ -252,6 +251,7 @@ body.dark-mode .collapsed-btn span {
 
   .header-right {
     margin-top: 2%;
+    width: 100px;
   }
 
   .header-right button {

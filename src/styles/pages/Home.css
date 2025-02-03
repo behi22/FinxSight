@@ -6,37 +6,37 @@
   margin: 5px;
 }
 
-.ant-card {
+.home-container .ant-card {
   margin-bottom: 16px;
   width: 75%;
   height: 90%;
 }
 
-.ant-statistic-title {
+.home-container .ant-statistic-title {
   font-weight: bold;
 }
 
-.ant-statistic-value {
+.home-container .ant-statistic-value {
   font-size: 24px;
   font-weight: bold;
 }
 
-button {
+.home-container button {
   margin-top: 16px;
 }
 
-.ant-row {
+.home-container .ant-row {
   margin-bottom: 24px;
 }
 
-.ant-col {
+.home-container .ant-col {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.ant-divider-horizontal.ant-divider-with-text-center::before,
-.ant-divider-horizontal.ant-divider-with-text-center::after {
+.home-container .ant-divider-horizontal.ant-divider-with-text-center::before,
+.home-container .ant-divider-horizontal.ant-divider-with-text-center::after {
   color: #001529;
   border-top: 3px solid #001529 !important;
 }
@@ -46,22 +46,26 @@ body.dark-mode .home-container {
   background-color: #001529;
 }
 
-body.dark-mode .divider {
+body.dark-mode .home-container .divider {
   color: #f0f0f0;
 }
 
-body.dark-mode .ant-divider-horizontal.ant-divider-with-text-center::before,
-body.dark-mode .ant-divider-horizontal.ant-divider-with-text-center::after {
+body.dark-mode
+  .home-container
+  .ant-divider-horizontal.ant-divider-with-text-center::before,
+body.dark-mode
+  .home-container
+  .ant-divider-horizontal.ant-divider-with-text-center::after {
   color: #f0f0f0;
   border-top: 3px solid #f0f0f0 !important;
 }
 
 @media (max-width: 768px) {
-  .ant-card {
+  .home-container .ant-card {
     width: 100%;
   }
 
-  .ant-row {
+  .home-container .ant-row {
     margin-bottom: 16px;
   }
 }
@@ -71,17 +75,17 @@ body.dark-mode .ant-divider-horizontal.ant-divider-with-text-center::after {
     padding: 16px;
   }
 
-  .ant-col {
+  .home-container .ant-col {
     flex: 0 0 100%;
   }
 
-  .divider {
+  .home-container .divider {
     margin: 20px 0;
   }
 }
 
 @media (max-width: 480px) {
-  .ant-card {
+  .home-container .ant-card {
     width: 100%;
     height: auto;
   }
