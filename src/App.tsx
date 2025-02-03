@@ -10,10 +10,13 @@ import Inventory from './pages/Inventory';
 import Sales from './pages/Sales';
 
 import './styles/Global.css';
-import './styles/Header.css';
-import './styles/Navbar.css';
-import './styles/Profile.css';
-import './styles/Footer.css';
+
+import './styles/components/Header.css';
+import './styles/components/Navbar.css';
+import './styles/components/Profile.css';
+import './styles/components/Footer.css';
+
+import './styles/pages/Home.css';
 
 const { Content } = Layout;
 
